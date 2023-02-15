@@ -8,6 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { JwtModule } from '@auth0/angular-jwt';
+//
+
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MoviesComponent } from './movies/movies.component';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MoviesonlineComponent } from './moviesonline/moviesonline.component';
+//
 
 // specify the key where the token is stored in the local storage
 export const LOCALSTORAGE_TOKEN_KEY = 'stanford';
@@ -19,9 +29,16 @@ export function tokenGetter() {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    MoviesComponent,
+    MovieDetailComponent,
+    MessagesComponent,
+    MovieSearchComponent,
+    MoviesonlineComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

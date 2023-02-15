@@ -1,0 +1,21 @@
+<h2>My Online Movies</h2>
+
+<div>
+  <label for="new-movie">Movie name Online: </label>
+  <input id="new-movie" #movieName />
+
+
+  <button type="button" class="add-button" (click)="getGenres();movieName.value=''">
+    get movie Genre ButtonOneOnline
+  </button>
+  <button type="button" class="add-button" (click)="getMovies();">
+    get movie ButtonOneOnline
+  </button>
+  <button type="button" class="add-button" (click)="getGenres();movieName.value=''">
+    search movie ButtonOneOnline
+  </button>
+</div>
+
+
+
+
