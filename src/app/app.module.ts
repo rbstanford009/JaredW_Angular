@@ -17,6 +17,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MoviesonlineComponent } from './moviesonline/moviesonline.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 //
 
 // specify the key where the token is stored in the local storage
@@ -52,7 +53,8 @@ export function tokenGetter() {
         tokenGetter: tokenGetter,
         allowedDomains: ['localhost:3000', 'localhost:8080']
       }
-    })
+    }),
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,18 @@
-
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/movies">Movies</a>
-  <a routerLink="/moviesonline">Online</a>
-</nav>
+<mat-toolbar color="primary" role="banner">
+  <img
+    width="40"
+    alt="Movie App Logo"
+    src="../assets/movie-clapper-open.svg"
+  />
+  <span id="app_title">&nbsp;Movie App</span>
+  <span class="spacer"></span>
+  <nav>
+    <a mat-button routerLink="/dashboard">Dashboard</a>
+    <a mat-button routerLink="/search/movie">Search Movie</a>
+    <a mat-button routerLink="/search/person">Search Person</a>
+    <a mat-button routerLink="/login" *ngIf="!isLoggedIn()">Login</a>
+    <button mat-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+  </nav>
+</mat-toolbar>
+<a  routerLink="/dashboard">Dashboard</a>
 <router-outlet></router-outlet>
-

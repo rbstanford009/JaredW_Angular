@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movie login';
+  login = true;
+
+  isLoggedIn() {
+
+    return this.login;
+  }
+
+  logout() {
+    this.login = false;
+
+  }
 }
