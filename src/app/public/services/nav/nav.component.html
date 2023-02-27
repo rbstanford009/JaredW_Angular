@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="menu-toolbar">Menu</mat-toolbar>
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="trending">Trending</a>
+      <a mat-list-item routerLink="favourites">Favourites</a>
+      <a mat-list-item (click)='logout()'>Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class='toolbar'>
+      <!-- <span>Movie Cruiser</span> -->
+      <img src="../../assets/logo.svg" alt="" style="height: 6vh;">
+      <div class="header-item-container">
+        <app-search class="search-bar"></app-search>
+        <button class='login-btn' mat-flat-button color="primary" routerLink='/login'>Login</button>
+      </div>
+
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

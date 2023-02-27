@@ -12,6 +12,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MovieSearchComponent} from "./public/components/movie-search/movie-search.component";
 //
 
 // specify the key where the token is stored in the local storage
@@ -24,6 +25,7 @@ export function tokenGetter() {
 
 @NgModule({
   declarations: [
+    MovieSearchComponent,
     AppComponent
 
   ],
@@ -46,6 +48,9 @@ export function tokenGetter() {
     MatToolbarModule
   ],
   providers: [],
+  exports: [
+    MovieSearchComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
