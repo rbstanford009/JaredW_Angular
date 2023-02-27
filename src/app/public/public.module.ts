@@ -10,9 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     // Own Components
+    DashboardComponent,
     LoginComponent,
     RegisterComponent
   ],
