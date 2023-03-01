@@ -1,21 +1,28 @@
-<h2>My Online Movies</h2>
+<h2>My Online Movies FOO</h2>
 
+<form #f="ngForm" (ngSubmit)="getMovies(first)" novalidate>
+  <input name="first" ngModel required #first="ngModel" />
+  <input name="last" ngModel />
+  <button>Submit</button>
+  <p>HELLO: {{ first.value }}</p>
+</form>
+<p>First name value: {{ first.value }}</p>
+<p>First name valid: {{ first.valid }}</p>
+<p>Form value: {{ f.value | json }}</p>
+<p>Form valid: {{ f.valid }}</p>
 <div>
   <label for="new-movie">Movie name Online: </label>
-  <input id="new-movie" #movieName />
+  <!-- <input id="new-movie" name="movieName" #movieName ngModule /> -->
+  <input name="movieName" ngModel #moveName="ngModel" />
+  {{ movieName }}
 
-
-  <button type="button" class="add-button" (click)="getGenres();movieName.value=''">
+  <!-- <button type="button" class="add-button" (click)="getGenres();movieName.value=''">
     get movie Genre ButtonOneOnline
   </button>
-  <button type="button" class="add-button" (click)="getMovies();">
+  <button type="button" class="add-button" (click)="getMovies("beast");">
     get movie ButtonOneOnline
   </button>
   <button type="button" class="add-button" (click)="getGenres();movieName.value=''">
     search movie ButtonOneOnline
-  </button>
+  </button> -->
 </div>
-
-
-
-

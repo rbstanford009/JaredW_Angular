@@ -11,11 +11,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MoviesonlineComponent} from './components/moviesonline/moviesonline.component';
 
 @NgModule({
   declarations: [
     // Own Components
     DashboardComponent,
+    MoviesonlineComponent,
     LoginComponent,
     RegisterComponent
   ],

@@ -40,17 +40,18 @@ export class MoviesonlineComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getMovies();
+    // this.getMovies("beast");
  //   this.getMoviesMany();
 /*
 
 */
   }
 
-    getMovies(): void {
+    getMovies(movieTitle: any): void {
+      console.log(movieTitle);
         console.log(this.movies);
 
-        this.httpService.searchMovie("Beast")
+        this.httpService.searchMovie(movieTitle)
             .pipe(
                 map(data => Object.keys(data).map(key => data[key]))
             )
