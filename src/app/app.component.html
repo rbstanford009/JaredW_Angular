@@ -7,12 +7,12 @@
   <span id="app_title">&nbsp;Movie App</span>
   <span class="spacer"></span>
   <nav>
-    <a mat-button routerLink="/dashboard">Dashboard</a>
-    <a mat-button routerLink="/search/movie">Search Movie</a>
+    <a mat-button routerLink="/protected/dashboard">Dashboard</a>
+    <a mat-button routerLink="/search/movie">Search Moviey</a>
     <a mat-button routerLink="/search/person">Search Person</a>
     <a mat-button routerLink="/login" *ngIf="!isLoggedIn()">Login</a>
     <button mat-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
   </nav>
 </mat-toolbar>
-<a  routerLink="/dashboard">Dashboard</a>
+<a  routerLink="/protected/dashboard">Dashboardz</a>
 <router-outlet></router-outlet>
