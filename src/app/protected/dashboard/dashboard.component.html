@@ -1,4 +1,4 @@
-<p>Protected Dashboard  Bruceworks Mar21 11am </p>
+<p>Protected Dashboard  Bruceworks </p>
 
 
 <h2>My Online Movies</h2>
@@ -11,11 +11,17 @@
   <input id="new-movie-year" #movieName />
 
   <br>
-  <button type="button" class="add-button" (click)="searchMovie(movieName.value);movieName.value=''">
+  <button type="button" class="add-button" (click)="searchMovie(movieName.value);">
     movie search
   </button>
   <br>
   <br>
+  <output>{{movies.length}}</output>
+  <ul>
+    <li *ngFor="let su of movies" >
+      {{su|json}}
+    </li>
+  </ul>
   <br>
   <br>
   <br>

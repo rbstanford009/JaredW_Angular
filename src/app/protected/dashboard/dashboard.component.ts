@@ -84,6 +84,20 @@ export class DashboardComponent implements OnInit {
 
     console.log(simpleTest);
     //   test.pipe().
-    return this.movies
+
+    let test;
+    let count =0;
+    let movieData = this.movies.entries();
+    for(let test1 of movieData) {
+      console.log(test1);
+      console.log('----------DUMP-------------'+count);
+      if(count == 1) {
+        test = test1;
+      }
+      count++;
+    }
+
+    console.log('----------POST-------------');
+    return this.movies;
   }
 }
