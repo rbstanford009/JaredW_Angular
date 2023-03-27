@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getMovies();
+
     //   this.getMoviesMany();
     /*
 
@@ -42,26 +42,7 @@ export class DashboardComponent implements OnInit {
     return this.httpService.getGenres();
   }
 
-  getMovies(): void {
-    console.log(this.movies);
 
-    this.httpService.searchMovie("Beast")
-      .pipe(
-        map(data => Object.keys(data).map(key => data[key]))
-      )
-      .subscribe((movies: Movie[]) => this.movies = movies);
-
-    console.log(this.movies);
-
-    console.log('----------PRE-------------');
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=083f0465f131ae121114d5e51a6d4ddf&language=en-US&query=the&page=1&include_adult=true';
-    this.httpClient.get(url).subscribe(console.log);
-    let simpleTest = this.httpClient.get(url); //.subscribe(console.log);
-
-    console.log(simpleTest);
-
-
-  }
 
 
 
