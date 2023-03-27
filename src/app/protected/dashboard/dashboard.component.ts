@@ -4,7 +4,7 @@ import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
 import {Observable} from "rxjs";
 import {HttpService} from "../../http.service";
 import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs/operators";
+import {map, tap} from "rxjs/operators";
 import {Movie} from "../../moviesonline/movie";
 
 @Component({
@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   private moviesUrl = 'api/movies';  // URL to web api      // https://api.themoviedb.org/3/search/movie?api_key=083f0465f131ae121114d5e51a6d4ddf&language=en-US&query=the&page=1&include_adult=true
 
   public movies: Movie[] = [];
+  test: any;
   constructor(
     private httpService: HttpService,
     private httpClient: HttpClient,
@@ -69,11 +70,18 @@ export class DashboardComponent implements OnInit {
 
     console.log(this.movies);
 
+    // this.httpService
+    //   .searchMovie(name)
+    //   .pipe(
+    //     map((data) => Object.keys(data).map((key) => data[key]))
+    //   )
+    //   .subscribe((movies: Movie[]) => (this.movies = movies));
+
     this.httpService.searchMovie(name)
-      .pipe(
-        map(data => Object.keys(data).map(key => data[key]))
-      )
-      .subscribe((movies: Movie[]) => this.movies = movies);
+      .subscribe((movieDB) => {
+        this.movies = movieDB.results
+        console.log(`%c${JSON.stringify(this.movies)}`, 'font-size: 22px; color: yellow;');
+      });
 
     console.log(this.movies);
 
