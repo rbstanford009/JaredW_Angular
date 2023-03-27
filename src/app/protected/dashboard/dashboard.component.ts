@@ -44,7 +44,9 @@ export class DashboardComponent implements OnInit {
 
 
 
-
+  dummy(name: string) {
+    console.log(name)
+  }
 
   searchMovie(name: string): Movie[] {
 
