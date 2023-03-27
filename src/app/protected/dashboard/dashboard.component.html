@@ -8,18 +8,21 @@
   <input id="new-movie" #movieName />
   <br>
   <label for="new-movie-year">Movie of YEAR: </label>
-  <input id="new-movie-year" #movieName />
+  <input id="new-movie-year" #movieYear />
 
   <br>
-  <button type="button" class="add-button" (click)="searchMovie(movieName.value);">
+  <button type="button" class="add-button" (click)="searchMovie(movieName.value,movieYear.value);">
     movie search
   </button>
   <br>
   <br>
-  <output>{{movies.length}}</output>
+  <output>{{moviesReturn.length}}</output>
   <ul>
-    <li *ngFor="let su of movies" >
-      {{su|json}}
+    <li *ngFor="let su of moviesReturn; let i = index" >
+      {{i}}. {{su.title}}, {{su.release_date}}
+      <!-- {{su.title}}{{su.release_date}}{{su.poster_path}} -->
+      <!--{{su|json}} -->
+
     </li>
   </ul>
   <br>
@@ -29,9 +32,7 @@
   <button type="button" class="add-button" (click)="getGenres();movieName.value=''">
     get movie Genre ButtonOneOnline
   </button>
-  <button type="button" class="add-button" (click)="getMovies();">
-    get all movie
-  </button>
+
 
 
 </div>

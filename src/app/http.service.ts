@@ -21,7 +21,9 @@ export class HttpService {
   searchMovie(movieName: any): Observable<any> {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=083f0465f131ae121114d5e51a6d4ddf&language=en-US&query=${movieName}&page=1&include_adult=true&append_to_response=release_dates`;
     let retVal = this.httpClient.get<any>(url);
+    console.log('----------PRE searchMovie-------------');
     console.log(retVal);
+    console.log('----------POST searchMovie-------------');
     return retVal;
   }
   /*

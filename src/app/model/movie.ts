@@ -6,6 +6,9 @@ export class Movie {
     public overview: string,
     public release_date: string,
     public vote_average: number,
-    public genre_ids: [number],
+
     public poster_path?: string,) { }
+
+
+
 }
